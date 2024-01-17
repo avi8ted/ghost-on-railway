@@ -1,0 +1,25 @@
+{
+  "name": "ghost",
+  "version": "5.4.0",
+  "description": "Deploy Ghost v5 on Railway",
+  "main": "index.js",
+  "author": "farazpatankar",
+  "license": "MIT",
+  "engines": {
+    "node": "16.X"
+  },
+  "dependencies": {
+    "casper": "github:TryGhost/Casper#main",
+    "ghost": "5.4.0",
+    "ghost-storage-cloudinary": "2.2.4",
+    "lyra": "github:TryGhost/lyra#main",
+    "headline": "github:TryGhost/headline#main",
+    "ruby": "github:TryGhost/ruby#main",
+    "ease": "github:TryGhost/ease#main",
+    "mysql2": "2.3.3"
+  },
+  "scripts": {
+    "start": "bin/create-config && node index.js",
+    "postinstall": "bin/alter-auth-method && bash bin/cloudinary.sh && bash bin/themes.sh"
+  }
+}
